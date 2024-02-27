@@ -1,0 +1,59 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      # - id: check-added-large-files
+      - id: check-ast
+      - id: check-executables-have-shebangs
+      - id: check-json
+      # - id: check-shebang-scripts-are-executable
+      - id: check-yaml
+      # - id: detect-aws-credentials
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      # - id: no-commit-to-branch
+      - id: trailing-whitespace
+        # exclude: "mygame"
+  # Format code
+  # - repo: https://github.com/psf/black
+  #   rev: 24.1.1
+  #   hooks:
+  #     - id: black
+  #       language_version: python3.11
+  # Ensure crendentials aren't hardwired/shown in code
+  # - repo: https://github.com/Yelp/detect-secrets
+  #   rev: 'v1.4.0'
+  #   hooks:
+  #     - id: detect-secrets
+  # - repo: https://github.com/Yelp/detect-secrets
+  #   rev: v1.4.0
+  #   hooks:
+  #     - id: detect-secrets
+  #       # exclude: venv/
+  #       # exclude-files: example.env
+  #       # exclude-files: web_project/settings.py
+  #       exclude: |
+  #         (?x)^(
+  #             .vscode/tasks.json|
+  #             EXAMPLE.env|
+  #             example.env|
+  #             web_project/settings.py|
+  #             README.md |
+  #             templates/quizzes/entry.html |
+  #             templates/quizzes/index.html |
+  #             templates/main.html |
+  #             NOTES.md
+  #         )$
+  # Markdown Hooks - BROKEN; doesn't even run on Windows
+  # - repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
+  #   rev: 'v1.1.2'
+  #   hooks:
+  #     - id: dockerfile_lint
+  #     - id: markdown-toc
+  # Docker-Compose Hooks - BROKEN
+  # - repo: https://github.com/IamTheFij/docker-pre-commit
+  #   rev: 'v2.1.1'
+  #   hooks:
+  #     - id: docker-compose-check
